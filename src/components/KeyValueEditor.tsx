@@ -13,11 +13,7 @@ export type Props = {
 
 export function KeyValueEditor(props: Props) {
   return (
-    <box
-      flexGrow={1}
-      borderStyle="rounded"
-      onMouseDown={() => props.onMouseDown()}
-    >
+    <box flexGrow={1} borderStyle="rounded" onMouseDown={() => props.onMouseDown()}>
       <box flexDirection="row" border={["bottom"]}>
         <box width="50%" border={["right"]} paddingX={1}>
           <text>Key</text>

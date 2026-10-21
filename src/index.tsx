@@ -22,9 +22,7 @@ enum RequestTab {
 }
 
 const [selectedPane, setSelectedPane] = createSignal<Pane>(Pane.METHOD);
-const [selectedRequestTab, setSelectedRequestTab] = createSignal<RequestTab>(
-  RequestTab.HEADERS,
-);
+const [selectedRequestTab, setSelectedRequestTab] = createSignal<RequestTab>(RequestTab.HEADERS);
 
 function getBorderColor(pane: Pane): string {
   return selectedPane() === pane ? borderFocus : borderDefault;
@@ -45,11 +43,7 @@ function App() {
             title="Method"
             width="20%"
           >
-            <input
-              placeholder="GET"
-              onMouseDown={() => setSelectedPane(Pane.METHOD)}
-              marginX={1}
-            />
+            <input placeholder="GET" onMouseDown={() => setSelectedPane(Pane.METHOD)} marginX={1} />
           </box>
           <box
             borderStyle={borderStyle}
@@ -64,11 +58,7 @@ function App() {
             />
           </box>
         </box>
-        <box
-          borderStyle={borderStyle}
-          borderColor={getBorderColor(Pane.REQUEST)}
-          flexGrow={1}
-        >
+        <box borderStyle={borderStyle} borderColor={getBorderColor(Pane.REQUEST)} flexGrow={1}>
           <box flexDirection="row" width="100%">
             <box backgroundColor={getBackgroundColor(RequestTab.HEADERS)}>
               <text
